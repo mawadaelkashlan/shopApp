@@ -2,15 +2,16 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:shop_app/layout/cubit/cubit.dart';
 import 'package:shop_app/layout/cubit/states.dart';
 import 'package:shop_app/models/home_model.dart';
 import 'package:shop_app/shared/components/components.dart';
-
 import '../../models/categories_model.dart';
 import '../../shared/styles/colors.dart';
 
 class ProductsScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ShopAppCubit, ShopLayOutStates>(
@@ -66,7 +67,11 @@ class ProductsScreen extends StatelessWidget {
             ),
             Text(
               'Categories',
-              style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),
+              style: TextStyle(
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.w600,
+                color: ShopAppCubit.get(context).isDark? Colors.white : Colors.black,
+              ),
             ),
             SizedBox(
               height: 10.0,
@@ -89,7 +94,12 @@ class ProductsScreen extends StatelessWidget {
             ),
             Text(
               'Products',
-              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w600),
+              style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w600,
+                color: ShopAppCubit.get(context).isDark? Colors.white : Colors.black,
+
+              ),
             ),
             SizedBox(
               height: 10.0,
@@ -114,8 +124,8 @@ class ProductsScreen extends StatelessWidget {
       );
 
   Widget buildGridProduct(ProductModel model , context) => Container(
-        color: Colors.white,
-        child: Column(
+    color: ShopAppCubit.get(context).isDark? HexColor('333333'): Colors.white ,
+    child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(

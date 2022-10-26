@@ -3,7 +3,6 @@ import 'package:shop_app/modules/login/login_screen.dart';
 import 'package:shop_app/shared/components/components.dart';
 import 'package:shop_app/shared/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import '../../shared/network/local/cache_helper.dart';
 
 class BoardingModel {
@@ -36,7 +35,7 @@ class _OnBoradingScreenState extends State<OnBoradingScreen> {
       body: 'On Board 2 body',
     ),
     BoardingModel(
-      image: 'assets/images/onBoarding_1.jpeg',
+      image: 'assets/images/onBoarding_3.jpeg',
       title: 'On Board 3 Title',
       body: 'On Board 3 body',
     ),

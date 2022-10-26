@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/layout/cubit/cubit.dart';
@@ -15,14 +13,14 @@ class CategoriesScreen extends StatelessWidget {
     return BlocConsumer<ShopAppCubit , ShopLayOutStates>(
       listener:  (context,state){},
       builder: (context,state) => ListView.separated(
-        itemBuilder: (context,index)=> buildCatItem(ShopAppCubit.get(context).categoriesModel!.data.data[index]),
+        itemBuilder: (context,index)=> buildCatItem(ShopAppCubit.get(context).categoriesModel!.data.data[index], context),
         separatorBuilder: (context, index) => myDivider() ,
         itemCount: ShopAppCubit.get(context).categoriesModel!.data.data.length,
       ),
     );
   }
 
-  Widget buildCatItem(DataModel model) => Padding(
+  Widget buildCatItem(DataModel model , context ) => Padding(
     padding: const EdgeInsets.all(20.0),
     child: Row(
       children: [
@@ -33,9 +31,14 @@ class CategoriesScreen extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         SizedBox(width: 15.0,),
-        Text(model.name , style: TextStyle( fontSize: 20),),
+        Text(model.name , style: TextStyle(
+            fontSize: 20,
+          color: ShopAppCubit.get(context).isDark? Colors.white : Colors.black,
+        ),),
         Spacer(),
-        Icon(Icons.arrow_forward_ios_outlined)
+        Icon(Icons.arrow_forward_ios_outlined,
+          color: ShopAppCubit.get(context).isDark? Colors.white : Colors.black,
+        )
       ],
     ),
   );

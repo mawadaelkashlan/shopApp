@@ -26,6 +26,12 @@ class ShopLayout extends StatelessWidget {
                   navigateTo(context, SearchScreen());
                 },
               ),
+              IconButton(
+                icon: Icon(Icons.brightness_6_outlined , size: 22.0,),
+                onPressed: () {
+                  cubit.changeThemeMode();
+                },
+              ),
             ],
           ),
           body: cubit.bottomScreens[cubit.currentIndex],

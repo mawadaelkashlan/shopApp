@@ -43,7 +43,7 @@ ThemeData darkTheme = ThemeData(
 ThemeData lightTheme = ThemeData(
     primarySwatch: defaultColor,
     scaffoldBackgroundColor: Colors.white,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       titleSpacing: 20.0,
       backwardsCompatibility: false,
       systemOverlayStyle: SystemUiOverlayStyle(
@@ -64,7 +64,7 @@ ThemeData lightTheme = ThemeData(
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: defaultColor,
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme:  BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: defaultColor,
         unselectedItemColor: Colors.grey,

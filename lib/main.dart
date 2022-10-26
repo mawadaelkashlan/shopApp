@@ -14,7 +14,6 @@ import 'package:shop_app/shared/components/constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   Bloc.observer = MyBlocObserver();
 
   DioHelper.init();
@@ -65,7 +64,7 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
             theme: lightTheme,
             darkTheme: darkTheme,
-            themeMode: ThemeMode.light,
+            themeMode: ShopAppCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
             home: startWidget,
           );
         },

@@ -68,7 +68,7 @@ class DefaultFormField extends StatelessWidget {
 
 Widget defaultButton({
   double width = double.infinity,
-  Color background = Colors.blue,
+  Color background = Colors.green,
   bool isUpperCase = true,
   double radius = 3.0,
   required VoidCallback function,
@@ -92,13 +92,13 @@ Widget defaultButton({
         color: background,
       ),
     );
-
 Widget defaultTextButton({required String text, required VoidCallback function,}) => TextButton(
 onPressed: function,
 child: Text(text.toUpperCase()),);
 
 void navigateTo(context, widget) =>
     Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
+
 
 void navigateAndFinish(context, widget) => Navigator.pushAndRemoveUntil(
     context, MaterialPageRoute(builder: (context) => widget), (route) => false);
@@ -188,6 +188,7 @@ Widget buildListProduct(model, context, {bool isOldPrice = true}) => Padding(
                 style: TextStyle(
                   fontSize: 14.0,
                   height: 1.3,
+                  color: ShopAppCubit.get(context).isDark? Colors.white : Colors.black,
                 ),
               ),
               Spacer(),
